@@ -24,7 +24,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import okio.Buffer;
 import org.assertj.core.data.MapEntry;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static com.squareup.moshi.TestUtil.newReader;
@@ -58,7 +57,7 @@ public final class MapJsonAdapterTest {
       toJson(String.class, Boolean.class, map);
       fail();
     } catch (JsonDataException expected) {
-      assertThat(expected).hasMessage("Map key is null at path $.");
+      assertThat(expected).hasMessage("Map key is null at $.");
     }
   }
 
