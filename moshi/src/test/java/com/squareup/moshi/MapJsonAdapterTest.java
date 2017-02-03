@@ -138,8 +138,8 @@ public final class MapJsonAdapterTest {
     jsonObject.put("7", null);
 
     JsonAdapter<Map<Integer, Boolean>> jsonAdapter = mapAdapter(Integer.class, Boolean.class);
-    assertThat(jsonAdapter.serializeNulls().toJsonObject(map)).isEqualTo(jsonObject);
-    assertThat(jsonAdapter.fromJsonObject(jsonObject)).isEqualTo(map);
+    assertThat(jsonAdapter.serializeNulls().toJsonValue(map)).isEqualTo(jsonObject);
+    assertThat(jsonAdapter.fromJsonValue(jsonObject)).isEqualTo(map);
   }
 
   class Base32Adapter extends JsonAdapter<byte[]>  {
